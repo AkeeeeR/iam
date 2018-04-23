@@ -1,0 +1,21 @@
+html body {
+  margin: 0;
+  color: black;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  @media (min-width: 1500px) { width: 1450px !important; }
+}
+
+#maps {
+  margin: 0 auto;
+  width: 88%;
+  padding: 15px;
+  border: 1px solid #e4e4e4; 
+  filter: grayscale(80%);
+}

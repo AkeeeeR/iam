@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>IAM - Arkadiusz Moroń</title>
+</head>
+<body>
+    <div id="container">
+        <div class="navbar">
+            <div class="vertical-menu">
+                <a class="active"><i class="fa fa-user-o"></i></a>
+                <a><i class="fa fa-desktop"></i></a>
+                <a><i class="fa fa-file-code-o"></i></a>
+                <a><i class="fa fa-envelope-o"></i></a>
+            </div>
+        </div>
+        <div id="main"></div>
+    </div>
+    <div id="footer"><p>© 2018 Arkadiusz Moroń</p></div>
+    <script src="react/build/react.js"></script>
+    <script src="scripts.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script>
+        ReactDOM.render(
+            React.DOM.form( { 
+                className: "form", 
+                id: "contactForm", 
+                method: "POST", 
+                action: "mail.php",
+                }, 
+                React.DOM.div( {
+                    className: "form-row",
+                    },
+                    React.DOM.label( {
+                        htmlFor: "field-name",
+                    },
+                    "Imię i nazwisko*"),
+                    React.DOM.input( {
+                        type:"text", name:"name", requiredId:"field-name", dataError:"Przedstaw się :)", pattern:"[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+",
+                    },
+                    null)
+                ),
+                React.DOM.div( {
+                    className: "form-row",
+                    },
+                    React.DOM.label( {
+                        htmlFor: "field-email",
+                    },
+                    "Email*"),
+                    React.DOM.input( {
+                        type:"text", name:"email", requiredId:"field-email", dataError:"Wpisz poprawny adres email!", pattern:"[^@s]+@[^@s]+.[^@s]+",
+                    },
+                    null)
+                ),
+                React.DOM.div( {
+                    className: "form-row",
+                    },
+                    React.DOM.label( {
+                        htmlFor: "field-message",
+                    },
+                    "Wiadomość*"),
+                    React.DOM.textarea( {
+                        name:"message", id:"field-message", requiredDataError:"Nie bądź taki, napisz coś :(", pattern:".+",
+                    },
+                    null)
+                ),
+                React.DOM.span( {
+                    className: "form-row honey-row",
+                    },
+                    React.DOM.label( {
+                        htmlFor: "honey",
+                    },
+                    "Jeżeli jesteś człowiekiem, nie wypełniaj tego pola"),
+                    React.DOM.input( {
+                        type:"text", name:"honey",
+                    },
+                    null)
+                ),
+                React.DOM.div( {
+                    className: "form-row",
+                    },
+                    React.DOM.label( {
+                        className: "checkbox-cnt",
+                    },
+                        React.DOM.input( {
+                            type:"checkbox", dataError:"Nie zapomnij o mnie!", name:"regulation",
+                        },
+                        null),
+                        React.DOM.i( {
+                            className:"state", ariaHidden: "true",
+                        },
+                        null),
+                        React.DOM.span( null, "Udowodnij, że nie jesteś robotem.")
+                    ),
+                ),
+                React.DOM.div( {
+                    className: "form-row",
+                    },
+                    React.DOM.button( {
+                        type: "submit", className: "submit-btn",
+                    },
+                    "Wyślij"
+                    )
+                )
+            ),
+            
+
+            document.getElementById("main")
+        );
+    </script>
+</body>
+</html>

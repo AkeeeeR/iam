@@ -1,0 +1,46 @@
+$white-color: white;
+$mail-color: #e4e4e4;
+@mixin my-border { 
+    border: 1px solid #e4e4e4; 
+}
+
+#mail-main {
+    width:750px;
+    margin:20px auto 0;
+    background-color: $white-color;
+    @include my-border;
+    border-radius:10px;
+    padding:20px;
+    font-size: 17px;
+    @media (max-width: 900px) {width: 100%;}
+    textarea, input {
+        padding: 5px;
+        border-radius: 3px;
+        @include my-border;
+        margin-bottom: 25px;
+        width: 700px;
+        height: 40px;
+        @media (max-width: 900px) {width: 100%;}
+    }
+    ::placeholder {
+        color: $mail-color;
+        opacity: 1;
+    }
+    
+    :-ms-input-placeholder {
+        color: $mail-color;
+    }
+    
+    ::-ms-input-placeholder {
+        color: $mail-color;
+    }
+    #msg-area { 
+        min-height: 200px;
+        max-height: auto; 
+    }
+    input#submit {
+        width:255px;
+        cursor:pointer;
+        margin-bottom:5px;
+    }  
+}

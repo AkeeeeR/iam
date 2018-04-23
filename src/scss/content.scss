@@ -1,0 +1,52 @@
+$block-bgcolor: grey;
+@mixin slide-style {   
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+}
+
+#content-main {
+    display: block; 
+    background-color: white;
+    padding: 130px 0;
+}
+
+#left-block {
+    background-color: $block-bgcolor;
+    height: 400px;
+}
+
+.fas {
+    font-size: 60px;
+    color: white;
+}
+
+.slide1 {
+    background: url('../jpg/h1.jpg');
+    @include slide-style;
+}
+
+.slide2 {
+    background: url('../jpg/h2.jpg');
+    @include slide-style;
+}
+
+.slide3 {
+    background: url('../jpg/h3.jpg');
+    @include slide-style;
+}
+
+#right-block {
+    background-color: $block-bgcolor;
+    height: 350px;
+    margin-top: 25px;
+}
+
+.col-sm-6 {
+    padding: 5px;
+}
+
+@media (max-width: 992px) {.con-scale-view {width: 100%;}}
+
